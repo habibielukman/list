@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<meta charset="utf-8">
+    	<title>LIST</title>
+    	<link rel="stylesheet" href="/css/style.css">
+    	<link rel="stylesheet" data-purpose="Layout StyleSheet" title="Default" disabled href="/css/app-e23924a0edb4b571d42fe2a3ca61ab8b.css?vsn=d">
+	    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"href="/css/app-wa-6972bf07d6b9f99336a9a78bb51ecbc8.css?vsn=d">
+	    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+		<script src="/send_url.js"></script>
+		<link rel="icon" type="image/x-icon" href="favicon.png">
+
+  	</head>
+  	<body>
+    	<header>
+      		<a href="/" class="header-logo">LIST</a>
+    	</header>
+    	<div class="container">
+	      	<div class="container-header">
+	        	<h1>Shopping List</h1>
+				<a href="/new" class="new-button">+ Add Item</a>
+	      	</div>
+			<form action="/addtask" method="POST">
+		      	<table class="index-table-wrapper">
+		        	<tr class="table-head">
+		          		<th class="idr-column">ID</th>
+		          		<th class="id-column">Item</th>
+						<th class="id-column">Price</th>
+						<th class="id-column"></th>
+		        	</tr>
+		        	<tr class="table-body">
+						<% if(tasks.length == 0) { %>
+							<tr>
+			              		<div class="item-data">
+			                		<td class="id-column"></td>
+			                		<td class="name-column">Click the <b>+ Add Item</b> button to create new item</td>
+								</div>
+			            	</tr>
+						<% } else { %>
+			        	<% tasks.forEach(task => { %>
+			            	<tr>
+			              		<div class="item-data">
+			                		<td class="id-column"><%= tasks.indexOf(task)+1 %></span>
+			                		<td class="name-column"><%= task %></span>
+									<td class="name-column">Rp.<%= prices[tasks.indexOf(task)] %>,00</span>
+								</div>
+								<td class="item-menu">
+									<button class="index-button" formaction="/removetask" name="<%=tasks.indexOf(task)+1%>" id="<%=tasks.indexOf(task)+1%>" type="submit"><i class="fa-solid fa-trash"></i></button>
+			            		
+								</td>
+			            	</tr>
+			        	<% })} %>
+		        	</tr>
+					<tr >
+						<div class="item-data">
+							<td class="id-column"></td>
+							<td class="name-column">Total Price</span>
+							<td class="name-column">Rp.<%= sum %>,00</td>
+						</div>
+					</tr>
+		      	</table>
+			</form>
+    	</div>
+  	</body>
+</html>
