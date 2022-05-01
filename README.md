@@ -3,7 +3,7 @@ LIST lets you create and manage your shopping list easily. Add items &amp; price
 
 You need to install `ejs`,`express` and `body-parse` to run the app
 ```
-npm i ejs body-parse express
+npm i ejs body-parse express nodemon
 ```
 Run code using
 ```
