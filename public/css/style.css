@@ -58,10 +58,12 @@ input {
   margin: 0 auto;
   padding: 60px;
 }
-
+@media screen and (max-width: 600px){
+	.top-wrapper{
+		display: block;
+	}
+}
 .top-detail {
-  width: 36%;
-  min-width: 320px;
   margin-top: -40px;
 }
 
@@ -79,15 +81,14 @@ input {
 }
 
 .top-detail .description {
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 14px !important;
+  line-height: 28px !important;
   letter-spacing: 0.5px;
   margin-bottom: 40px;
 }
 
 .top-detail .index-button {
-  width: 184px;
-  height: 48px;
+  min-height: 48px;
   text-align: center;
   line-height: 45px;
   font-weight: 600;
@@ -108,7 +109,7 @@ input {
 }
 
 .top-image {
-  width: 64%;
+  width: 64% !important;
   text-align: center;
   overflow: hidden;
 }
@@ -119,7 +120,7 @@ input {
 
 /* header ================================ */
 header {
-  height: 56px;
+  min-height: 56px;
   background-color: #ffffff;
   border-bottom: 1px solid #f0f4f9;
 }
@@ -139,8 +140,8 @@ header {
 
 /* container ================================ */
 .container {
-  width: 80%;
-  min-width: 360px;
+/*   width: 80%; */
+  min-width: 400px;
   max-width: 720px;
   margin: 0 auto;
   margin-top: 56px;
@@ -217,7 +218,9 @@ table{
   justify-content: space-between;
   align-items: left;
 }
-
+/* .prc-column{
+	width: 10px;
+} */
 .table-body .id-column {
   font-size: 16px;
   color: #bac6d3;
@@ -260,7 +263,7 @@ margin-right: 10px;
 }
 
 .item-menu button:hover {
-  color: #ff7f8c;
+  color: #58d2b2;
   transition: all 0.3s ease;
 }
 
